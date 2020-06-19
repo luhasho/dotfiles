@@ -1,0 +1,42 @@
+"##################################################
+"表示設定
+"##################################################
+"colorscheme evening
+set columns=160
+set lines=40
+
+
+"##################################################
+"フォント
+"※フォントの調べ方
+"	1. GUI上の編集メニューより、フォント設定 
+"	2. :set guifont にてフォントの確認
+"##################################################
+"set guifont=源真ゴシック等幅_Normal:h11:cSHIFTJIS:qDRAFT
+"set guifont=源真ゴシック等幅_Regular:h12:cSHIFTJIS:qDRAFT
+"set guifont=Myrica_M:h13:cSHIFTJIS:qDRAFT
+"set guifont=ＭＳ_ゴシック:h10::cSHIFTJIS
+
+"↲ ←→↑↓〇●○◎■□◆◇ ▲△
+"あい①0Oo1 lI|! ij mrn b6d \
+"Font settings for Windows
+if has("gui_win32")
+    "set guifont=MyricaM_M:h14:cSHIFTJIS:qDRAFT
+    set guifont=Cica:h12:cSHIFTJIS:qDRAFT
+    set printfont=Cica:h12:cSHIFTJIS
+    "曖昧幅を全角にする
+    set ambiwidth=double
+endif
+
+
+"##################################################
+"印刷設定
+"##################################################
+set printheader=%=Page%N
+
+" 縦方向に印刷
+set printoptions=portrait:y
+
+" 横方向に印刷
+"set printoptions=portrait:n
+
