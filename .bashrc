@@ -1,12 +1,12 @@
-#aliasİ’è
+#aliasè¨­å®š
 alias gv='gvim.exe'
 alias gst='git status'
 alias ls='ls -F --color=always --show-control-chars'
 #alias less='less -R'
-#ŠÂ‹«•Ï”LESS‚ğC³‚·‚éƒpƒ^[ƒ“
+#ç’°å¢ƒå¤‰æ•°LESSã‚’ä¿®æ­£ã™ã‚‹ãƒ‘ã‚¿ãƒ¼ãƒ³
 #export LESS='-R'
 
-#WindowƒRƒ}ƒ“ƒh‚Ì•¶š‰»‚¯—p(cp932‚ğutf-8‚É•ÏŠ·‚·‚é)
+#Windowã‚³ãƒãƒ³ãƒ‰ã®æ–‡å­—åŒ–ã‘ç”¨(cp932ã‚’utf-8ã«å¤‰æ›ã™ã‚‹)
 function wincmd() {
    CMD=$1
    shift
