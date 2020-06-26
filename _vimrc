@@ -252,13 +252,20 @@ inoremap <silent> <C-Space>dt <C-R>=strftime("%Y-%m-%d(%a) %H:%M")<CR>
 inoremap <silent> <C-Space>t <C-R>=strftime("%H:%M")<CR>
 
 
-
 nnoremap <silent> <Space>d <ESC>i<C-R>=strftime("%Y-%m-%d(%a)")<CR><ESC><right>
 nnoremap <silent> <Space>t <ESC>i<C-R>=strftime("%H:%M")<CR><ESC><right>
+
+"##################################################
 "受付メモ作成
+"##################################################
 nnoremap <silent> <Space>tel :r ~\dotfiles\telmemo.txt<CR>jjf\|l<ESC>i<C-R>=strftime("%H:%M")<CR><ESC><right>Di<SPACE>\|<ESC>T\|ji
 
 
+"##################################################
+"YAMAHAルータConfigのコメント検索
+"##################################################
+nnoremap <silent> <Space>rtx /\v^#(.*Rev\.\|clear.config\|save)@!.*\|^$<CR>
+":g//d<CR>:noh<CR>
 
 
 "##################################################
