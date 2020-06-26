@@ -253,8 +253,12 @@ inoremap <silent> <C-Space>t <C-R>=strftime("%H:%M")<CR>
 
 
 
-nnoremap <silent> <C-Space>d <ESC>i<C-R>=strftime("%Y-%m-%d(%a)")<CR><ESC><right>
-nnoremap <silent> <C-Space>t <ESC>i<C-R>=strftime("%H:%M")<CR><ESC><right>
+nnoremap <silent> <Space>d <ESC>i<C-R>=strftime("%Y-%m-%d(%a)")<CR><ESC><right>
+nnoremap <silent> <Space>t <ESC>i<C-R>=strftime("%H:%M")<CR><ESC><right>
+"受付メモ作成
+nnoremap <silent> <Space>tel :r ~\dotfiles\telmemo.txt<CR>jjf\|l<ESC>i<C-R>=strftime("%H:%M")<CR><ESC><right>Di<SPACE>\|<ESC>T\|ji
+
+
 
 
 "##################################################
