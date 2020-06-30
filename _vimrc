@@ -91,8 +91,11 @@ function! SetStatusLine()
     elseif mode() =~ 'R'
         let c = 3
         let mode_name = 'Replace'
-    else
+    elseif mode() =~ 'c'
         let c = 4
+        let mode_name = 'Command'
+    else
+        let c = 5
         let mode_name = 'Visual'
     endif
 
@@ -113,9 +116,13 @@ let moji_code=has('multi_byte')&&&fileencoding!=''?&fileencoding:&encoding
         \ . '[%p%%]'
 endfunction
 
-
 set statusline=%!SetStatusLine()
 
+"コマンドラインモード時に再描画する
+augroup StatusLineRedraw
+    autocmd!
+    autocmd CmdlineEnter * redraws
+augroup END
 
 "カーソル位置表示（statuslinedeで設定するためコメントアウト）
 "set ruler
@@ -147,10 +154,9 @@ set laststatus=2
 ""文字コード表示
 "set statusline+=[%{has('multi_byte')&&\&fileencoding!=''?&fileencoding:&encoding}]
 
-
-
 "コマンド候補の表示
 set wildmenu
+
 
 "##################################################
 "色関係の設定
@@ -180,8 +186,10 @@ highlight User1 gui=bold guibg=red guifg=white
 highlight User2 gui=bold guibg=blue guifg=white
 " 置換
 highlight User3 gui=bold guibg=coral guifg=black
+" コマンドライン
+highlight User4 gui=bold guibg=lightred guifg=black
 " ビジュアル
-highlight User4 gui=bold guibg=magenta guifg=white
+highlight User5 gui=bold guibg=magenta guifg=white
 
 "色確認
 "so $VIMRUNTIME/syntax/colortest.vim
