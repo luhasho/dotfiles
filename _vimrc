@@ -70,6 +70,8 @@ set cursorline
 set virtualedit=onemore
 set virtualedit+=block
 
+set showtabline=2
+
 "シンタックス
 syntax enable
 
@@ -215,8 +217,9 @@ set backspace=indent,eol,start
 "タブ、空白、改行の可視化
 "##################################################
 set list
-set listchars=tab:>-,trail:_,extends:>,precedes:<,nbsp:,
-set listchars+=,eol:↲
+set listchars=tab:>-,trail:_,extends:>,precedes:<,nbsp:%
+set listchars+=eol:↲
+"set listchars+=space:_
 "タブ、行末スペース、折り返した行の行末、折り返した行の行頭、ノーブレークスペース
 "eol:x  改行
 
@@ -224,7 +227,8 @@ set listchars+=,eol:↲
 "set ambiwidth=double  "Display double-width symbols properly
 
 highlight NonText    ctermbg=None ctermfg=59 guibg=NONE guifg=darkgray
-highlight SpecialKey ctermbg=None ctermfg=59 guibg=NONE guifg=cyan
+highlight SpecialKey ctermbg=None ctermfg=59 guibg=NONE guifg=darkgray
+"highlight SpecialKey ctermbg=None ctermfg=59 guibg=NONE guifg=cyan
 
 
 "NonText
@@ -302,6 +306,23 @@ nnoremap <C-down> <C-W>-
 nnoremap <S-right> zl
 nnoremap <S-left> zh
 
+
+"##################################################
+"タブ関連
+"##################################################
+"gr で前のタブへ
+nnoremap gr gT
+
+"タブ自体を移動する
+nnoremap <Tab>l :+tabmove<CR>
+nnoremap <Tab>h :-tabmove<CR>
+
+
+"##################################################
+"タブ文字関連
+"##################################################
+nnoremap <Tab>t :set noexpandtab<CR>
+nnoremap <Tab>s :set expandtab<CR>
 
 
 "##################################################
