@@ -1,0 +1,24 @@
+# dein
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# ディレクトリ表示
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+# マークダウンプレビュー
+[[plugins]]
+repo = 'previm/previm'
+
+# マークダウン テーブル整形
+[[plugins]]
+repo = 'godlygeek/tabular'
+
+# マークダウン
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+
+# google翻訳
+[[plugins]]
+repo = 'skanehira/translate.vim'
+
