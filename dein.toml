@@ -22,3 +22,7 @@ repo = 'plasticboy/vim-markdown'
 [[plugins]]
 repo = 'skanehira/translate.vim'
 
+# powershell syntax
+[[plugins]]
+repo = 'PProvost/vim-ps1'
+
