@@ -263,7 +263,7 @@ highlight TabLineSel ctermfg=Red ctermbg=Yellow guifg=White guibg=Black gui=bold
 
 " The prefix key.
 nnoremap [TabPage]   <Nop>
-nmap   t [TabPage]
+map + [TabPage]
 
 
 " Tab jump
@@ -273,14 +273,14 @@ for n in range(1, 9)
 endfor
 
 " tt 新しいタブを一番右に作る
-map <silent> [TabPage]t :tablast <bar> tabnew<CR>
+nnoremap <silent> [TabPage]t :tablast <bar> tabnew<CR>
 " tx タブを閉じる
-map <silent> [TabPage]x :tabclose<CR>
+nnoremap <silent> [TabPage]x :tabclose<CR>
 
 " tn 次のタブ
-map <silent> [TabPage]n :tabnext<CR>
+nnoremap <silent> [TabPage]n :tabnext<CR>
 " tp 前のタブ
-map <silent> [TabPage]p :tabprevious<CR>
+nnoremap <silent> [TabPage]p :tabprevious<CR>
 
 
 "gr で前のタブへ
@@ -387,7 +387,7 @@ nnoremap <silent> <Space>rtx /\v^#(.*Rev\.\|clear.config\|save)@!.*\|^$<CR>
 "##################################################
 "ノーマルモードでのEnter
 "##################################################
-nnoremap <CR> i<CR><ESC>
+"nnoremap <CR> i<CR><ESC>
 
 
 "##################################################
