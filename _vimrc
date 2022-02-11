@@ -263,7 +263,7 @@ highlight TabLineSel ctermfg=Red ctermbg=Yellow guifg=White guibg=Black gui=bold
 
 " The prefix key.
 nnoremap [TabPage]   <Nop>
-map + [TabPage]
+map + t [TabPage]
 
 
 " Tab jump
@@ -430,7 +430,11 @@ inoremap [ []<left>
 inoremap ( ()<left>
 "inoremap { {}<left>
 
-
+"##################################################
+" バッファ移動
+"##################################################
+nnoremap <silent> <C-j> :bprev<CR>
+nnoremap <silent> <C-k> :bnext<CR>
 
 
 "######################################################################
