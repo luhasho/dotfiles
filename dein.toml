@@ -26,3 +26,7 @@ repo = 'skanehira/translate.vim'
 [[plugins]]
 repo = 'PProvost/vim-ps1'
 
+# Vimヘルプ 日本語化
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+

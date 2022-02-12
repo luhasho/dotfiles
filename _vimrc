@@ -30,7 +30,8 @@ set splitright
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp932
 "set fileencodings=ucs-bom,iso-2022-jp,euc-jp,sjis,cp932,utf-8
-
+" ヘルプ言語の優先順位
+set helplang=ja,en
 "##################################################
 "検索関連
 "##################################################
@@ -197,7 +198,7 @@ highlight User5 gui=bold guibg=magenta guifg=white
 
 
 "##################################################
-"タブ関連
+" TabPage 関連
 "##################################################
 " Anywhere SID.
 function! s:SID_PREFIX()
@@ -447,25 +448,7 @@ nnoremap <silent> <C-k> :bnext<CR>
 "##################################################
 autocmd vimenter * NERDTree
 
-
-"##################################################
-" vim-PukiWiki 設定
-"##################################################
-""vim
-	" PukiWiki のサイト情報 "
-	let g:pukiwiki_config = {
-	\	"LocalWiki" : {
-	\		"url" : "http://10.30.224.132/Kanagawa/",
-	\		"top" : "TOP",
-	\	},
-	\}
-
-""	\		"url" : "http://127.0.0.1/pukiwiki/",
-""	\		"top" : "FrontPage",
-
-
 filetype plugin indent on
-
 
 "##################################################
 " PrevimOpen 設定
