@@ -263,7 +263,7 @@ highlight TabLineSel ctermfg=Red ctermbg=Yellow guifg=White guibg=Black gui=bold
 
 " The prefix key.
 nnoremap [TabPage]   <Nop>
-map + t [TabPage]
+map  T [TabPage]
 
 
 " Tab jump
