@@ -6,6 +6,12 @@
 
 # Todo winget のインストール
 
+# Todo フォント変更する
+# フォント変更しないとwinget時に画面が変わる
+#
+# Todo $PROFILE が存在する場合にリネーム
+# リネームしないと、シンボリックリンク設定時にエラーする
+# 末尾old or 日付など付加する
 
 # --------------------------------------------------
 # winget 
@@ -39,7 +45,8 @@ if ( -not (test-path $dotfilesDir)) {new-item -path $dotfilesDir -itemtype direc
 # dein インストール
 # --------------------------------------------------
 # dein インストーラーのダウンロード
-Invoke-WebRequest https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.ps1 -OutFile installer.ps1
+#Invoke-WebRequest https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.ps1 -OutFile installer.ps1
+Invoke-WebRequest https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.ps1 -OutFile installer.ps1
 # $deinInstallDir に dein インストール
 ./installer.ps1 $deinInstallDir
 
