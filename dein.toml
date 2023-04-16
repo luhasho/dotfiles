@@ -30,3 +30,6 @@ repo = 'PProvost/vim-ps1'
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 
+# インデント強調
+[[plugins]]
+repo = 'preservim/vim-indent-guides'

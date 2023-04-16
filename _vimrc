@@ -84,46 +84,46 @@ syntax enable
 "let $mode_ban=1
 "let g:mode_name='aa'
 function! SetStatusLine()
-    if mode() =~ 'i'
-        let c = 1
-        let mode_name = 'Insert'
-    elseif mode() =~ 'n'
-        let c = 2
-        let mode_name = 'Normal'
-    elseif mode() =~ 'R'
-        let c = 3
-        let mode_name = 'Replace'
-    elseif mode() =~ 'c'
-        let c = 4
-        let mode_name = 'Command'
-    else
-        let c = 5
-        let mode_name = 'Visual'
-    endif
+  if mode() =~ 'i'
+    let c = 1
+    let mode_name = 'Insert'
+  elseif mode() =~ 'n'
+    let c = 2
+    let mode_name = 'Normal'
+  elseif mode() =~ 'R'
+    let c = 3
+    let mode_name = 'Replace'
+  elseif mode() =~ 'c'
+    let c = 4
+    let mode_name = 'Command'
+  else
+    let c = 5
+    let mode_name = 'Visual'
+  endif
 
-let moji_code=has('multi_byte')&&&fileencoding!=''?&fileencoding:&encoding
+  let moji_code=has('multi_byte')&&&fileencoding!=''?&fileencoding:&encoding
 
 "ステータスラインのフォーマットは、直接文字列を入れるので、\ でのエスケープは必要なし
-    return "%" . c . "*[" . mode_name . "]%*"
-        \ . '%t'
-        \ . '%m'
-        \ . '%r'
-        \ . '%h'
-        \ . '%w'
-        \ . ' '
-        \ . '/' . moji_code
-        \ . '/' . '%{&ff}' . '/' . '%b(H:%B)'
-        \ . '%='
-        \ . '' . '列=%v' . ' 行=%l/%L'
-        \ . '[%p%%]'
+  return "%" . c . "*[" . mode_name . "]%*"
+    \ . '%t'
+    \ . '%m'
+    \ . '%r'
+    \ . '%h'
+    \ . '%w'
+    \ . ' '
+    \ . '/' . moji_code
+    \ . '/' . '%{&ff}' . '/' . '%b(H:%B)'
+    \ . '%='
+    \ . '' . '列=%v' . ' 行=%l/%L'
+    \ . '[%p%%]'
 endfunction
 
 set statusline=%!SetStatusLine()
 
 "コマンドラインモード時に再描画する
 augroup StatusLineRedraw
-    autocmd!
-    autocmd CmdlineEnter * redraws
+  autocmd!
+  autocmd CmdlineEnter * redraws
 augroup END
 
 "カーソル位置表示（statuslinedeで設定するためコメントアウト）
@@ -215,7 +215,7 @@ function! s:my_tabline()  "{{{
     let mod = getbufvar(bufnr, '&modified') ? '[+]' : ' '
     let title = fnamemodify(bufname(bufnr), ':t')
     if title == ''
-        let title ='無名'
+      let title ='無名'
     endif
     let title = '[' . title . ']'
     let s .= '%'.i.'T'
@@ -226,9 +226,9 @@ function! s:my_tabline()  "{{{
     "let wincount = tabpagewinnr(v:lnum, '$')
     let wincount = tabpagewinnr((i), '$')
     if wincount > 1
-        " 6=アクティブ  7=非アクティブ
-        let c =  (i == tabpagenr() ? '6' : '7')
-        let s .= '%' . c . '*' . '(' . wincount . ')' .'%*'
+      " 6=アクティブ  7=非アクティブ
+      let c =  (i == tabpagenr() ? '6' : '7')
+      let s .= '%' . c . '*' . '(' . wincount . ')' .'%*'
     endif
     let s .= '%#TabLineFill# '
   endfor
@@ -330,16 +330,16 @@ nnoremap <Tab>s :set expandtab<CR>
 "全角スペースをハイライト表示
 "##################################################
 function! ZenkakuSpace()
-    highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
+  highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
 endfunction
 
 if has('syntax')
-    augroup ZenkakuSpace
-        autocmd!
-        autocmd ColorScheme       * call ZenkakuSpace()
-        autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
-    augroup END
-    call ZenkakuSpace()
+  augroup ZenkakuSpace
+    autocmd!
+    autocmd ColorScheme       * call ZenkakuSpace()
+    autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
+  augroup END
+  call ZenkakuSpace()
 endif
 
 
@@ -464,8 +464,8 @@ let g:previm_open_cmd = 'chrome.exe'
 
 
 augroup PrevimSettings
-    autocmd!
-    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+  autocmd!
+  autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
 
 nnoremap <silent> <C-p> :PrevimOpen<CR> " Ctrl-pでプレビュー
@@ -474,6 +474,18 @@ nnoremap <silent> <C-p> :PrevimOpen<CR> " Ctrl-pでプレビュー
   let g:previm_enable_realtime = 1
 
 let g:vim_markdown_toc_autofit = 1
+
+"##################################################
+" vim-indent-guides
+"##################################################
+" 起動時にインデント可視化を有効にする
+let g:indent_guides_enable_on_vim_startup = 1
+" 無効にしたいファイルタイプ
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+" 可視化領域のサイズを指定する。デフォルトは「0」。「0」だと、shiftwidth値と同じになる
+" let g:indent_guides_guide_size = 1
+" 可視化を行う階層を指定する
+let g:indent_guides_start_level = 2
 
 
 "##################################################
